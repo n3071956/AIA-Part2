@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05999aa-6cce-4742-9125-024718b1e6bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/replstate.xml" afterPath="$PROJECT_DIR$/.idea/replstate.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inference engines/.idea/misc.xml" afterPath="$PROJECT_DIR$/out/production/inference engines/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inference engines/.idea/replstate.xml" afterPath="$PROJECT_DIR$/out/production/inference engines/.idea/replstate.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inference engines/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/inference engines/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imports.clj" afterPath="$PROJECT_DIR$/src/imports.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/operators.clj" afterPath="$PROJECT_DIR$/src/operators.clj" />
-    </list>
+    <list default="true" id="f05999aa-6cce-4742-9125-024718b1e6bc" name="Default" comment="" />
     <ignored path="inference engines.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -186,7 +177,7 @@
       <recent name="C:\Users\windows 10 pro\Desktop\uni\AI Apps\inference engines\src" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1480668478298">{:repl-history {:ide [], :local [&quot;(ops_search world '((escaped prisoner true)) ops :world world)&quot; &quot;(ops-search)&quot; &quot;(load \&quot;ops-search\&quot;)&quot; &quot;(load \&quot;ops_search\&quot;)&quot; &quot;(ops_search world '((escaped prisoner true)))&quot; &quot;(ops-search world '((escaped prisoner true)) ops :world world)&quot; &quot;(ops-search world '((escaped prisoner true)) ops)&quot; &quot;(ops-search world)&quot; &quot;(ops-search world '((escaped prisoner true)))&quot; &quot;(load \&quot;matcher(0.0m)\&quot;)&quot; &quot;(load \&quot;ops-search(1b)\&quot;)&quot; &quot;(load \&quot;operators\&quot;)&quot; &quot;(ops-search world '((escaped prisoner true)) operations-prisoner)&quot; &quot;(load \&quot;socket\&quot;)&quot; &quot;(startup-server 2222)&quot; &quot;(planner world '((escaped prisoner true)))&quot; &quot;(planner world '((escaped prisoner true)) operations-prisoner)&quot; &quot;(planner state1 '((escaped prisoner true)) planner-operations-prisoner :world world)&quot; &quot;(planner world '((escaped prisoner true)) planner-operations-prisoner)&quot; &quot;(planner world '(escaped prisoner true) planner-operations-prisoner)&quot; &quot;(planner world '(is ?junction exit) planner-operations-prisoner)&quot; &quot;(planner world '(has prisoner key) planner-operations-prisoner)&quot; &quot;(planner world '(has ?guard key) planner-operations-prisoner)&quot; &quot;(load \&quot;imports\&quot;)&quot;], :remote []}}</component>
+  <component name="ReplState" timestamp="1480668851294">{:repl-history {:ide [], :local [&quot;(ops_search world '((escaped prisoner true)) ops :world world)&quot; &quot;(ops-search)&quot; &quot;(load \&quot;ops-search\&quot;)&quot; &quot;(load \&quot;ops_search\&quot;)&quot; &quot;(ops_search world '((escaped prisoner true)))&quot; &quot;(ops-search world '((escaped prisoner true)) ops :world world)&quot; &quot;(ops-search world '((escaped prisoner true)) ops)&quot; &quot;(ops-search world)&quot; &quot;(ops-search world '((escaped prisoner true)))&quot; &quot;(load \&quot;matcher(0.0m)\&quot;)&quot; &quot;(load \&quot;ops-search(1b)\&quot;)&quot; &quot;(load \&quot;operators\&quot;)&quot; &quot;(ops-search world '((escaped prisoner true)) operations-prisoner)&quot; &quot;(load \&quot;socket\&quot;)&quot; &quot;(startup-server 2222)&quot; &quot;(planner world '((escaped prisoner true)))&quot; &quot;(planner world '((escaped prisoner true)) operations-prisoner)&quot; &quot;(planner state1 '((escaped prisoner true)) planner-operations-prisoner :world world)&quot; &quot;(planner world '((escaped prisoner true)) planner-operations-prisoner)&quot; &quot;(planner world '(escaped prisoner true) planner-operations-prisoner)&quot; &quot;(planner world '(is ?junction exit) planner-operations-prisoner)&quot; &quot;(planner world '(has prisoner key) planner-operations-prisoner)&quot; &quot;(planner world '(has ?guard key) planner-operations-prisoner)&quot; &quot;(load \&quot;imports\&quot;)&quot;], :remote []}}</component>
   <component name="RunManager" selected="Clojure REPL.repl">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -637,12 +628,12 @@
       <workItem from="1479726419516" duration="791000" />
       <workItem from="1479992579069" duration="29000" />
       <workItem from="1479994615326" duration="27001000" />
-      <workItem from="1480614013323" duration="5378000" />
+      <workItem from="1480614013323" duration="5749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33199000" />
+    <option name="totallyTimeSpent" value="33570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="40" width="1378" height="735" extended-state="0" />
@@ -652,7 +643,7 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34434655" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34434655" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -667,7 +658,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17841409" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
