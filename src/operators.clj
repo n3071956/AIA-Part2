@@ -206,11 +206,12 @@
 (def planner-operations-prisoner
 
   '{
+
     :move-to-junction
     {:name     move-to-junction
      :achieves (on prisoner ?junction)
-     ;:when ()
-     ;:post ()
+     :when ()
+     :post ((moving prisoner ?corridor))
      :pre ((moving prisoner ?corridor)
             (connects ?corridor ?junction)
             )
@@ -223,8 +224,8 @@
     :move-to-corridoor
     {:name     move-to-corridoor
      :achieves (on prisoner ?corridor)
-     ;:when ()
-     ;:post ()
+     :when ((watched ?corridor false))
+     :post ((on prisoner ?junction))
      :pre ((on prisoner ?junction)
             (connects ?junction ?corridor)
             (watched ?corridor false)
@@ -238,8 +239,8 @@
     :unlock
     {:name     unlock
      :achieves (is c unlocked)
-     ;:when ()
-     ;:post ()
+     :when ((is c locked))
+     :post ()
      :pre ((at prisoner c)
             (is c locked)
             )
@@ -252,8 +253,8 @@
     :leave-cell
     {:name     leave-cell
      :achieves (on prisoner ?junction)
-     ;:when ()
-     ;:post ()
+     :when ((at prisoner c))
+     :post ((is c unlocked))
      :pre ((at prisoner c)
             (is c unlocked)
             (connects c ?junction)
@@ -267,8 +268,10 @@
     :get-key
     {:name     get-key
      :achieves (has prisoner key)
-     ;:when ()
-     ;:post ()
+     :when ((on prisoner ?junction)
+             (at ?guard ?junction)
+             (has ?guard key))
+     :post ((on prisoner ?junction))
      :pre ((on prisoner ?junction)
             (at ?guard ?junction)
             (has ?guard key)
@@ -282,10 +285,9 @@
     :exit
     {:name     exit
      :achieves (escaped prisoner true)
-     ;:when ()
-     ;:post ()
-     :pre ((has prisoner key)
-            (on prisoner ?junction)
+     :when ((escaped prisoner false))
+     :post ( (on prisoner ?junction))
+     :pre ((on prisoner ?junction)
             (is ?junction exit)
             (escaped prisoner false)
             )
