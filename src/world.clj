@@ -80,6 +80,7 @@
      (facing guard1 c4)
      (has guard1 key)
 
+
      (watched c1 false)
      (watched c2 false)
      (watched c3 false)
@@ -93,5 +94,6 @@
      (facing guard2 c5)
 
      (at prisoner c)
+     (left prisoner c)
      (escaped prisoner false)
      })

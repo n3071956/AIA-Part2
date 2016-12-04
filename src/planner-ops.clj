@@ -28,25 +28,21 @@
 ;;--got-key
 (def planner-operations-prisoner
 
-  '{
-
-    :move-to-junction
+  '{ :move-to-junction
     {:name     move-to-junction
-     :achieves (on prisoner ?junction)
-     :when ()
-     :post ((moving prisoner ?corridor))
-     :pre ((moving prisoner ?corridor)
-            (connects ?corridor ?junction)
-            )
+     :achieves (on prisoner ?junction)                      ;;unlocked cell
+     :when ((moving prisoner ?corridor))
+     :post ((at prisoner c))
+     :pre ((connects ?corridor ?junction))
      :add ((on prisoner ?junction))
      :del ((moving prisoner ?corridor))
-     :txt (prisoner moved from ?corridor to ?junction)
+     :txt (prisoner moved somehow)
      :cmd ()
      }
 
     :move-to-corridoor
     {:name     move-to-corridoor
-     :achieves (on prisoner ?corridor)
+     :achieves (on prisoner ?corridor)                      ;;(unlocked cell leave cell prisoner moved from j6 to c8)
      :when ((watched ?corridor false))
      :post ((on prisoner ?junction))
      :pre ((on prisoner ?junction)
@@ -61,7 +57,7 @@
 
     :unlock
     {:name     unlock
-     :achieves (is c unlocked)
+     :achieves (is c unlocked)                              ;unlocked cell
      :when ((is c locked))
      :post ()
      :pre ((at prisoner c)
@@ -75,7 +71,7 @@
 
     :leave-cell
     {:name     leave-cell
-     :achieves (on prisoner ?junction)
+     :achieves (on prisoner ?junction)                      ;unlocked cell
      :when ((at prisoner c))
      :post ((is c unlocked))
      :pre ((at prisoner c)
@@ -90,7 +86,7 @@
 
     :get-key
     {:name     get-key
-     :achieves (has prisoner key)
+     :achieves (has prisoner key)                           ;failed
      :when ((on prisoner ?junction)
              (at ?guard ?junction)
              (has ?guard key))
@@ -105,12 +101,19 @@
      :cmd ()
      }
 
+    :protect-key
+    { :name protect-key
+     :achieves (has prisoner key)
+     :add  ((has prisoner key)  )
+     }
+
     :exit
     {:name     exit
-     :achieves (escaped prisoner true)
+     :achieves (escaped prisoner true)                      ;unlocks cell leave cell
      :when ((escaped prisoner false))
      :post ( (on prisoner ?junction))
-     :pre ((on prisoner ?junction)
+     :pre ((has prisoner key)
+            (on prisoner ?junction)
             (is ?junction exit)
             (escaped prisoner false)
             )
