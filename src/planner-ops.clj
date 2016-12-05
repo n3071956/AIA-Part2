@@ -31,12 +31,13 @@
   '{ :move-to-junction
     {:name     move-to-junction
      :achieves (on prisoner ?junction)                      ;;unlocked cell
-     :when ((moving prisoner ?corridor))
-     :post ((at prisoner c))
-     :pre ((connects ?corridor ?junction))
+     :when (())
+     :post (moving prisoner ?corridor)
+     :pre ((moving prisoner ?corridor)
+            (connects ?corridor ?junction))
      :add ((on prisoner ?junction))
      :del ((moving prisoner ?corridor))
-     :txt (prisoner moved somehow)
+     :txt (prisoner moved)
      :cmd ()
      }
 
@@ -80,7 +81,7 @@
             )
      :add ((on prisoner ?junction))
      :del ((at prisoner c))
-     :txt (leave cell)
+     :txt (leave cell prisoner moved to ?junction)
      :cmd ()
      }
 
