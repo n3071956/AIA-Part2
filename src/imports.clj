@@ -13,5 +13,5 @@
 
 ;;Test commands
 
-;(planner world '((escaped prisoner true)) planner-operations-prisoner)
+;(planner world '(escaped prisoner true) planner-operations-prisoner)
 ;(ops-search world '((escaped prisoner true)) operations-prisoner)

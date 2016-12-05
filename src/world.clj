@@ -21,10 +21,10 @@
      (connects j3 c5)
      (connects j3 c6)
      (connects c5 j3)
-     (connects c5 j4)
-     (connects j4 c5)
-     (connects j4 c7)
      (connects c7 j4)
+     (connects c5 j4)
+     (connects j4 c7)
+     (connects j4 c5)
      (connects c7 j6)
      (connects j6 c7)
      (connects j6 c8)
@@ -80,7 +80,6 @@
      (facing guard1 c4)
      (has guard1 key)
 
-
      (watched c1 false)
      (watched c2 false)
      (watched c3 false)
@@ -93,7 +92,8 @@
      (at guard2 j4)
      (facing guard2 c5)
 
+     (on prisoner c)
      (at prisoner c)
-     (left prisoner c)
+     ;(left prisoner c) ;what is this
      (escaped prisoner false)
      })
