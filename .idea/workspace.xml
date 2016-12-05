@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05999aa-6cce-4742-9125-024718b1e6bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/replstate.xml" afterPath="$PROJECT_DIR$/.idea/replstate.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inference engines.iml" afterPath="$PROJECT_DIR$/inference engines.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inference engines/.idea/misc.xml" afterPath="$PROJECT_DIR$/out/production/inference engines/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inference engines/.idea/replstate.xml" afterPath="$PROJECT_DIR$/out/production/inference engines/.idea/replstate.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inference engines/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/inference engines/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inference engines/inference engines.iml" afterPath="$PROJECT_DIR$/out/production/inference engines/inference engines.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imports.clj" afterPath="$PROJECT_DIR$/src/imports.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/operators.clj" afterPath="$PROJECT_DIR$/src/operators.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/planner-ops.clj" afterPath="$PROJECT_DIR$/src/planner-ops.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/world.clj" afterPath="$PROJECT_DIR$/src/world.clj" />
     </list>
     <ignored path="inference engines.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +41,8 @@
           <file leaf-file-name="planner-ops.clj" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/planner-ops.clj">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+                <state relative-caret-position="510">
+                  <caret line="72" column="167" selection-start-line="72" selection-start-column="167" selection-end-line="72" selection-end-column="167" />
                   <folding />
                 </state>
               </provider>
@@ -94,7 +85,7 @@
           <file leaf-file-name="operators.clj" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/operators.clj">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="509">
+                <state relative-caret-position="560">
                   <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
                   <folding />
                 </state>
@@ -227,7 +218,7 @@
       <recent name="C:\Users\windows 10 pro\Desktop\uni\AI Apps\inference engines\src" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1480981056738">{:repl-history {:ide [], :local [&quot;(ops_search world '((escaped prisoner true)) ops :world world)&quot; &quot;(ops-search)&quot; &quot;(load \&quot;ops-search\&quot;)&quot; &quot;(load \&quot;ops_search\&quot;)&quot; &quot;(ops_search world '((escaped prisoner true)))&quot; &quot;(ops-search world '((escaped prisoner true)) ops :world world)&quot; &quot;(ops-search world '((escaped prisoner true)) ops)&quot; &quot;(ops-search world)&quot; &quot;(ops-search world '((escaped prisoner true)))&quot; &quot;(load \&quot;matcher(0.0m)\&quot;)&quot; &quot;(load \&quot;ops-search(1b)\&quot;)&quot; &quot;(load \&quot;operators\&quot;)&quot; &quot;(load \&quot;socket\&quot;)&quot; &quot;(planner world '((escaped prisoner true)))&quot; &quot;(planner world '((escaped prisoner true)) operations-prisoner)&quot; &quot;(planner state1 '((escaped prisoner true)) planner-operations-prisoner :world world)&quot; &quot;(planner world '(is ?junction exit) planner-operations-prisoner)&quot; &quot;(planner world '(has ?guard key) planner-operations-prisoner)&quot; &quot;(planner world '(prisoner on j5) planner-operations-prisoner)&quot; &quot;(planner world '(prisoner on ?1) planner-operations-prisoner)&quot; &quot;(planner world '(prisoner on ?junction) planner-operations-prisoner)&quot; &quot;(planner world '(mleft prisoner c) planner-operations-prisoner)&quot; &quot;(planner world '(left prisoner c) planner-operations-prisoner)&quot; &quot;trace&quot; &quot;(planner world '(at prisoner c) planner-operations-prisoner)&quot; &quot;(planner world '(has prisoner key) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner junction) planner-operations-prisoner)&quot; &quot;(planner world '(moving prisoner ?corridor) planner-operations-prisoner)&quot; &quot;(startup-server port-num)&quot; &quot;;(startup-server 2222)&quot; &quot;(planner world '(connects ?corridor ?junction) planner-operations-prisoner)&quot; &quot;(planner world '(move-to-junction) planner-operations-prisoner)&quot; &quot;(planner world 'move-to-junction planner-operations-prisoner)&quot; &quot;(planner world move-to-junction planner-operations-prisoner)&quot; &quot;tions-prisoner)&quot; &quot;(startup-server 2222)&quot; &quot;(planner world '(is c unlocked) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner ?corridor) planner-operations-prisoner)&quot; &quot;(planner world 'leave-cell planner-operations-prisoner)&quot; &quot;(planner world '(leave-cell) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner j8) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner ?junction) planner-operations-prisoner)&quot; &quot;(planner world '((escaped prisoner true)) planner-operations-prisoner)&quot; &quot;(planner world '((on prisoner j6)) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner j6) planner-operations-prisoner)&quot; &quot;(ops-search world '((escaped prisoner true)) operations-prisoner)&quot; &quot;(planner world '(escaped prisoner true) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner j5) planner-operations-prisoner)&quot; &quot;(planner world '(escaped prisoner cell) planner-operations-prisoner)&quot; &quot;(load \&quot;imports\&quot;)&quot; &quot;(planner world '(on prisoner j4) planner-operations-prisoner)&quot;], :remote []}}</component>
+  <component name="ReplState" timestamp="1480981391135">{:repl-history {:ide [], :local [&quot;(ops_search world '((escaped prisoner true)) ops :world world)&quot; &quot;(ops-search)&quot; &quot;(load \&quot;ops-search\&quot;)&quot; &quot;(load \&quot;ops_search\&quot;)&quot; &quot;(ops_search world '((escaped prisoner true)))&quot; &quot;(ops-search world '((escaped prisoner true)) ops :world world)&quot; &quot;(ops-search world '((escaped prisoner true)) ops)&quot; &quot;(ops-search world)&quot; &quot;(ops-search world '((escaped prisoner true)))&quot; &quot;(load \&quot;matcher(0.0m)\&quot;)&quot; &quot;(load \&quot;ops-search(1b)\&quot;)&quot; &quot;(load \&quot;operators\&quot;)&quot; &quot;(load \&quot;socket\&quot;)&quot; &quot;(planner world '((escaped prisoner true)))&quot; &quot;(planner world '((escaped prisoner true)) operations-prisoner)&quot; &quot;(planner state1 '((escaped prisoner true)) planner-operations-prisoner :world world)&quot; &quot;(planner world '(is ?junction exit) planner-operations-prisoner)&quot; &quot;(planner world '(has ?guard key) planner-operations-prisoner)&quot; &quot;(planner world '(prisoner on j5) planner-operations-prisoner)&quot; &quot;(planner world '(prisoner on ?1) planner-operations-prisoner)&quot; &quot;(planner world '(prisoner on ?junction) planner-operations-prisoner)&quot; &quot;(planner world '(mleft prisoner c) planner-operations-prisoner)&quot; &quot;(planner world '(left prisoner c) planner-operations-prisoner)&quot; &quot;trace&quot; &quot;(planner world '(at prisoner c) planner-operations-prisoner)&quot; &quot;(planner world '(has prisoner key) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner junction) planner-operations-prisoner)&quot; &quot;(planner world '(moving prisoner ?corridor) planner-operations-prisoner)&quot; &quot;(startup-server port-num)&quot; &quot;;(startup-server 2222)&quot; &quot;(planner world '(connects ?corridor ?junction) planner-operations-prisoner)&quot; &quot;(planner world '(move-to-junction) planner-operations-prisoner)&quot; &quot;(planner world 'move-to-junction planner-operations-prisoner)&quot; &quot;(planner world move-to-junction planner-operations-prisoner)&quot; &quot;tions-prisoner)&quot; &quot;(startup-server 2222)&quot; &quot;(planner world '(is c unlocked) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner ?corridor) planner-operations-prisoner)&quot; &quot;(planner world 'leave-cell planner-operations-prisoner)&quot; &quot;(planner world '(leave-cell) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner j8) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner ?junction) planner-operations-prisoner)&quot; &quot;(planner world '((escaped prisoner true)) planner-operations-prisoner)&quot; &quot;(planner world '((on prisoner j6)) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner j6) planner-operations-prisoner)&quot; &quot;(ops-search world '((escaped prisoner true)) operations-prisoner)&quot; &quot;(planner world '(escaped prisoner true) planner-operations-prisoner)&quot; &quot;(planner world '(on prisoner j5) planner-operations-prisoner)&quot; &quot;(planner world '(escaped prisoner cell) planner-operations-prisoner)&quot; &quot;(load \&quot;imports\&quot;)&quot; &quot;(planner world '(on prisoner j4) planner-operations-prisoner)&quot;], :remote []}}</component>
   <component name="RunManager" selected="Clojure REPL.repl">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -493,33 +484,42 @@
       <workItem from="1480880150416" duration="2434000" />
       <workItem from="1480884411714" duration="24001000" />
       <workItem from="1480970683811" duration="445000" />
-      <workItem from="1480971213046" duration="8911000" />
+      <workItem from="1480971213046" duration="9245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70661000" />
+    <option name="totallyTimeSpent" value="70995000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969603" sideWeight="0.49682036" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.50293684" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.4217011" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" x="-1074" y="474" width="1061" height="1046" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22291504" sideWeight="0.50158983" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969603" sideWeight="0.49841017" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1309431" sideWeight="0.5047695" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1309431" sideWeight="0.49682036" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1309431" sideWeight="0.49523053" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17885533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22291504" sideWeight="0.49841017" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22291504" sideWeight="0.49841017" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -833,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/planner-ops.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="72" column="167" selection-start-line="72" selection-start-column="167" selection-end-line="72" selection-end-column="167" />
           <folding />
         </state>
       </provider>

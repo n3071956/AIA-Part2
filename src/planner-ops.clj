@@ -70,8 +70,9 @@
 
   '{:move-to-tile
     {:name move-to-tile
-     :achieves (on prisoner ?tilea)
+     :achieves (on prisoner ?tilea)     ;;Guard function defined above. - use https://www.scm.tees.ac.uk/isg/aia/student_papers/Healey_Milner_Percival-2.pdf (page 4-5)
      :when ((on prisoner ?tile) (connects ?tilea ?tileb) (:guard (check (? tile) (? tilea) (? tileb))))
+
      :post ((on prisoner ?tileb))
      ;;Same as ops
      :pre ((on prisoner ?tileb))
