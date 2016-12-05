@@ -28,18 +28,18 @@
 ;;--got-key
 (def planner-operations-prisoner
 
-  '{ :move-to-junction
-    {:name     move-to-junction
-     :achieves (on prisoner ?junction)                      ;;unlocked cell
-     :when (())
-     :post (moving prisoner ?corridor)
-     :pre ((moving prisoner ?corridor)
-            (connects ?corridor ?junction))
-     :add ((on prisoner ?junction))
+  '{ :move
+    {:name move-to-junction
+     :achieves (on prisoner ?junction)
+     :when ((moving prisoner ?corridor)
+             (connects ?junction ?corridor)
+             (:guard (correct-path (? junction) (? corridor))))
+     :post ((moving prisoner ?corridor))
+     :pre (connects ?corridor ?junction)
      :del ((moving prisoner ?corridor))
-     :txt (prisoner moved)
-     :cmd ()
-     }
+     :add ((on prisoner ?junction))
+     :cmd (())
+     :txt ((prisoner moved))}
 
     :move-to-corridoor
     {:name     move-to-corridoor
