@@ -28,28 +28,24 @@
 ;;--got-key
 (def planner-operations-prisoner
 
-  '{ :move
+  '{:move-to-junction
     {:name move-to-junction
      :achieves (on prisoner ?junction)
-     :when ((moving prisoner ?corridor)
-             (connects ?junction ?corridor)
-             (:guard (correct-path (? junction) (? corridor))))
+     :when ((connects ?junction ?corridor))
      :post ((moving prisoner ?corridor))
-     :pre (connects ?corridor ?junction)
+     :pre ()
      :del ((moving prisoner ?corridor))
      :add ((on prisoner ?junction))
      :cmd (())
-     :txt ((prisoner moved))}
+     :txt ((prisoner moved to ?junction))
+     }
 
     :move-to-corridoor
     {:name     move-to-corridoor
-     :achieves (on prisoner ?corridor)                      ;;(unlocked cell leave cell prisoner moved from j6 to c8)
+     :achieves (on prisoner ?corridor)                      ;;:txt (unlocked cell prisoner escaped the cell prisoner moved from ?junction to c8)}
      :when ((watched ?corridor false))
      :post ((on prisoner ?junction))
-     :pre ((on prisoner ?junction)
-            (connects ?junction ?corridor)
-            (watched ?corridor false)
-            )
+     :pre ()
      :add ((moving prisoner ?corridor))
      :del ((on prisoner ?junction))
      :txt (prisoner moved from ?junction to ?corridor)
@@ -81,7 +77,7 @@
             )
      :add ((on prisoner ?junction))
      :del ((at prisoner c))
-     :txt (leave cell prisoner moved to ?junction)
+     :txt (prisoner escaped the cell)
      :cmd ()
      }
 
