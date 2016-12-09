@@ -1,23 +1,15 @@
-;;----------------Planner operaotrs
-;;----------------
-;;Guard
-;;----------------
-;;--face
-(def planner-operations-guard
-  '{
-    :face
-    {:name     face
-     :achieves ()
-     :when     ()
-     :post     ()
-     :pre      ()
-     :add      ()
-     :del      ()
-     :txt      ()
-     :cmd      ()
-     }
-    }
-  )
+;; TEST CASES
+;;(planner world2 '(escaped prisoner true) planner-operations-prisoner)
+;;(planner world2 '(on prisoner exit) planner-operations-prisoner)
+;;(planner world2 '(on prisoner j5) planner-operations-prisoner)
+;;(planner world2 '(on prisoner c8) planner-operations-prisoner)
+;;(planner world2 '(on prisoner c6) planner-operations-prisoner)
+
+;;LOOPS!!!!!
+;;(planner world2 '(on prisoner j4) planner-operations-prisoner)
+;;(planner world2 '(on prisoner c5) planner-operations-prisoner)
+;;(planner world2 '(on prisoner c7) planner-operations-prisoner)
+
 
 ;;----------------
 ;;Prisoner
@@ -92,7 +84,8 @@
     :move
     {:name     move
      :achieves (on prisoner ?p2)
-     :when     ((connects ?p1 ?p2))
+     :when     ((connects ?p1 ?p2)
+                 (:not (protected ?p1)))
      :post     ((on prisoner ?p1))
      :pre      ((on prisoner ?p1)
                  (connects ?p1 ?p2))
@@ -122,10 +115,13 @@
     :exit
     {:name     exit
      :achieves (escaped prisoner true)
-     :when     ((is ?p1 exit))
+     :when     ((is exit exit))
      :post     ((on prisoner ?p1)
                  (has prisoner key))
-     :pre      (())
+     :pre      ((has prisoner key)
+                 (on prisoner ?p1)
+                 (is exit exit)
+                 (escaped prisoner false))
      :add      ((escaped prisoner true))
      :del      ((escaped prisoner false))
      :txt      (prisoner has escaped)

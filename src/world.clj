@@ -69,4 +69,14 @@
      (at prisoner c)
      (caged prisoner true)
      (escaped prisoner false)
+
+
+     (isa j1 junction)
+     (isa j2 junction)
+     (isa j3 junction)
+     (isa j4 junction)
+     (isa j5 junction)
+     (isa j6 junction)
+     (isa j7 junction)
+
      })
