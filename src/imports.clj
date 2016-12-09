@@ -6,7 +6,6 @@
 (load "planner-ops")
 (load "world")
 (load "world2")
-(load "breadth-first")
 
 (defn ui-out [& r]
   (apply println r))
