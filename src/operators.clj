@@ -25,7 +25,7 @@
                        :add ((on prisoner ?junction))
                        :del ((moving prisoner ?corridor))
                        :txt (prisoner moved from ?corridor to ?junction)
-                       :cmd [prisoner ?corridor ?junction]
+                       :cmd [move-from ?corridor ?junction]
                        }
     move-to-corridoor {:pre ((on prisoner ?junction)
                               (connects ?junction ?corridor)
@@ -34,7 +34,7 @@
                        :add ((moving prisoner ?corridor))
                        :del ((on prisoner ?junction))
                        :txt (prisoner moved from ?junction to ?corridor)
-                       :cmd []
+                       :cmd [move-from ?junction ?corridor]
                        }
     unlock            {:pre ((at prisoner c)
                               (is c locked)
@@ -42,7 +42,7 @@
                        :add ((is c unlocked))
                        :del ((is c locked))
                        :txt (unlocked cell)
-                       :cmd []
+                       :cmd [unlock-cell]
                        }
     leave-cell        {:pre ((at prisoner c)
                               (is c unlocked)
@@ -51,7 +51,7 @@
                        :add ((on prisoner ?junction))
                        :del ((at prisoner c))
                        :txt (leave cell)
-                       :cmd []
+                       :cmd [leave-cell]
                        }
     get-key           {:pre ((on prisoner ?junction)
                               (at ?guard ?junction)
@@ -60,7 +60,7 @@
                        :add ((has prisoner key))
                        :del ((has ?guard key))
                        :txt (key twoked)
-                       :cmd []
+                       :cmd [get-key]
                        }
     exit              {:pre ((has prisoner key)
                               (on prisoner ?junction)
@@ -70,6 +70,6 @@
                        :add ((escaped prisoner true))
                        :del ((escaped prisoner false))
                        :txt (get ops-searched m8)
-                       :cmd []
+                       :cmd [exit]
                        }
     })
