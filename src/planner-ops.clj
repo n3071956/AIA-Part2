@@ -102,13 +102,6 @@
     }
   )
 
-to exec.move-from-to [#src #dst]
-                      inform 1 (list "moving from" #src "to" #dst)
-                                     exec.pick-from #src
-                                         exec.drop-at #dst
-                                         inform -1 ["-move complete"]
-                                     end
-
 ; based on: strips-search-1a.clj from SHRDLU model
 ; naming changes only
 ;===================================================
