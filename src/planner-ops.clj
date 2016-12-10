@@ -4,11 +4,11 @@
 ;;(planner world2 '(on prisoner j5) planner-operations-prisoner)
 ;;(planner world2 '(on prisoner c8) planner-operations-prisoner)
 ;;(planner world2 '(on prisoner c6) planner-operations-prisoner)
+;;(planner world2 '(on prisoner c7) planner-operations-prisoner)
 
 ;;LOOPS!!!!!
 ;;(planner world2 '(on prisoner j4) planner-operations-prisoner)
 ;;(planner world2 '(on prisoner c5) planner-operations-prisoner)
-;;(planner world2 '(on prisoner c7) planner-operations-prisoner)
 
 
 ;;----------------
@@ -34,7 +34,7 @@
      :add      ((is c unlocked))
      :del      ((is c locked))
      :txt      (unlocked cell)
-     :cmd      (cell-unlocked)
+     :cmd      (cell-unlocked - )
      }
 
     :leave-cell
@@ -50,20 +50,19 @@
      :add      ((on prisoner ?p1))
      :del      ((at prisoner c))
      :txt      (leave cell)
-     :cmd      (leave cell)
+     :cmd      (leave cell - )
      }
 
     :move
     {:name     move
      :achieves (on prisoner ?p2)
-     :when     ((connects ?p1 ?p2)
-                 )
+     :when     ((connects ?p1 ?p2))
      :post     ((on prisoner ?p1))
      :pre      ((on prisoner ?p1)
                  (connects ?p1 ?p2))
      :del      ((on prisoner ?p1))
      :add      ((on prisoner ?p2))
-     :cmd      ((move-to ?p1) (move-to ?p2))
+     :cmd      (move-to ?p2 - )
      :txt      ((prisoner moved from ?p1 to ?p2))
      }
 
@@ -80,7 +79,7 @@
      :add      ((has prisoner key))
      :del      ((has ?guard key))
      :txt      (found key at ?p1)
-     :cmd      (key at ?p1)
+     :cmd      (key at ?p1 - )
      }
 
     ;;i think this is working because if its false escape
@@ -97,7 +96,7 @@
      :add      ((escaped prisoner true))
      :del      ((escaped prisoner false))
      :txt      (prisoner escaped)
-     :cmd      ((escaped to exit))
+     :cmd      (escaped to exit)
      }
     }
   )
