@@ -36,15 +36,6 @@
                        :txt (prisoner moved from ?junction to ?corridor)
                        :cmd []
                        }
-    ;move              {:pre ((on prisoner ?p1)
-    ;                          (connects ?p1 ?p2)
-    ;                          (watched ?p2 false)
-    ;                          )
-    ;                   :add ((on prisoner ?p2))
-    ;                   :del ((on prisoner ?p1))
-    ;                   :txt (prisoner moved from ?p1 to ?p2)
-    ;                   :cmd []
-    ;                   }
     unlock            {:pre ((at prisoner c)
                               (is c locked)
                               )

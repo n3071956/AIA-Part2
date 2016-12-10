@@ -23,34 +23,6 @@
 (def planner-operations-prisoner
 
   '{
-    ;:move-to-junction
-    ;{:name     move-to-junction
-    ; :achieves (on prisoner j5)
-    ; :when ((isjunction ?junction))
-    ; :post ((moving prisoner ?corridor))
-    ; :pre ((moving prisoner ?corridor)
-    ;        (connects ?corridor ?junction)
-    ;        )
-    ; :add ((on prisoner ?junction))
-    ; :del ((moving prisoner ?corridor))
-    ; :txt (| prisoner moved from ?corridor to ?junction)
-    ; :cmd ()
-    ; }
-    ;
-    ;:move-to-corridoor
-    ;{:name     move-to-corridoor
-    ; :achieves (moving prisoner ?corridor)
-    ; :when ((watched ?corridor false))
-    ; :post ((on prisoner ?junction))
-    ; :pre ((on prisoner ?junction)
-    ;        (connects ?junction ?corridor)
-    ;        (watched ?corridor false)
-    ;        )
-    ; :add ((moving prisoner ?corridor))
-    ; :del ((on prisoner ?junction))
-    ; :txt (| prisoner moved from ?junction to ?corridor)
-    ; :cmd ()
-    ; }
     :unlock
     {:name     unlock
      :achieves (is c unlocked)
@@ -62,7 +34,7 @@
      :add      ((is c unlocked))
      :del      ((is c locked))
      :txt      (unlocked cell)
-     :cmd      ()
+     :cmd      (cell-unlocked)
      }
 
     :leave-cell
@@ -78,20 +50,20 @@
      :add      ((on prisoner ?p1))
      :del      ((at prisoner c))
      :txt      (leave cell)
-     :cmd      ()
+     :cmd      (leave cell)
      }
 
     :move
     {:name     move
      :achieves (on prisoner ?p2)
      :when     ((connects ?p1 ?p2)
-                 (:not (protected ?p1)))
+                 )
      :post     ((on prisoner ?p1))
      :pre      ((on prisoner ?p1)
                  (connects ?p1 ?p2))
      :del      ((on prisoner ?p1))
      :add      ((on prisoner ?p2))
-     :cmd      ()
+     :cmd      ((move-to ?p1) (move-to ?p2))
      :txt      ((prisoner moved from ?p1 to ?p2))
      }
 
@@ -107,8 +79,8 @@
                  )
      :add      ((has prisoner key))
      :del      ((has ?guard key))
-     :txt      (prisoner found key)
-     :cmd      ()
+     :txt      (found key at ?p1)
+     :cmd      (key at ?p1)
      }
 
     ;;i think this is working because if its false escape
@@ -124,11 +96,18 @@
                  (escaped prisoner false))
      :add      ((escaped prisoner true))
      :del      ((escaped prisoner false))
-     :txt      (prisoner has escaped)
-     :cmd      ()
+     :txt      (prisoner escaped)
+     :cmd      ((escaped to exit))
      }
     }
   )
+
+to exec.move-from-to [#src #dst]
+                      inform 1 (list "moving from" #src "to" #dst)
+                                     exec.pick-from #src
+                                         exec.drop-at #dst
+                                         inform -1 ["-move complete"]
+                                     end
 
 ; based on: strips-search-1a.clj from SHRDLU model
 ; naming changes only
