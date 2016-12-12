@@ -53,17 +53,17 @@
      :cmd      (leave cell - )
      }
 
-    :move
-    {:name     move
+    :move   ;; multi move operator
+    { :name move
      :achieves (on prisoner ?p2)
-     :when     ((connects ?p1 ?p2))
-     :post     ((on prisoner ?p1))
-     :pre      ((on prisoner ?p1)
-                 (connects ?p1 ?p2))
-     :del      ((on prisoner ?p1))
-     :add      ((on prisoner ?p2))
-     :cmd      (move-to ?p2 - )
-     :txt      ((prisoner moved from ?p1 to ?p2))
+     :when ((connects ?p1 ?p2))
+     :post ((on prisoner ?p1))
+     :pre ((on prisoner ?p1)
+            (connects ?p1 ?p2))
+     :del ((on prisoner ?p1))
+     :add ((on prisoner ?p2))
+     :cmd (move-to ?p2 - )
+     :txt ((prisoner moved from ?p1 to ?p2))
      }
 
     :get-key

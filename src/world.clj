@@ -3,11 +3,11 @@
 ;;----------------
 (def world
   '#{
-     (connects j7 c1)
-     (connects j7 c2)
-     (connects c1 j7)
+     (connects exit c1)
+     (connects exit c2)
+     (connects c1 exit)
      (connects c1 j2)
-     (connects c2 j7)
+     (connects c2 exit)
      (connects c2 j1)
      (connects j1 c2)
      (connects j1 c4)
@@ -39,7 +39,7 @@
      (connects j6 c)
      (connects c j6)
 
-     (is j7 exit)
+     (is exit exit)
      (is c locked)
 
      (at guard1 j1)
@@ -61,22 +61,13 @@
      (watched j4 false)
      (watched j5 false)
      (watched j6 false)
-     (watched j7 false)
+     (watched exit false)
 
      (at guard2 j4)
      (facing guard2 c5)
 
+     (locked door false)
      (at prisoner c)
      (caged prisoner true)
      (escaped prisoner false)
-
-
-     (isa j1 junction)
-     (isa j2 junction)
-     (isa j3 junction)
-     (isa j4 junction)
-     (isa j5 junction)
-     (isa j6 junction)
-     (isa j7 junction)
-
      })
