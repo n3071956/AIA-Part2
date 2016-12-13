@@ -25,7 +25,7 @@
                        :add ((on prisoner ?junction))
                        :del ((moving prisoner ?corridor))
                        :txt (prisoner moved from ?corridor to ?junction)
-                       :cmd [move-from ?corridor ?junction]
+                       :cmd [move-junction ?junction]
                        }
     move-to-corridoor {:pre ((on prisoner ?junction)
                               (connects ?junction ?corridor)
@@ -34,7 +34,7 @@
                        :add ((moving prisoner ?corridor))
                        :del ((on prisoner ?junction))
                        :txt (prisoner moved from ?junction to ?corridor)
-                       :cmd [move-from ?junction ?corridor]
+                       :cmd []
                        }
     unlock            {:pre ((at prisoner c)
                               (is c locked)
@@ -51,7 +51,7 @@
                        :add ((on prisoner ?junction))
                        :del ((at prisoner c))
                        :txt (leave cell)
-                       :cmd [leave-cell]
+                       :cmd [move-junction ?junction]
                        }
     get-key           {:pre ((on prisoner ?junction)
                               (at ?guard ?junction)
@@ -73,3 +73,19 @@
                        :cmd [exit]
                        }
     })
+
+(let [sizes '{small 5, med 7, large 9}
+      sp    " "
+      qt    "\""
+      str-qt   (fn[x] (str " \"" x "\" "))    ; wrap x in quotes
+      stack-no (fn[x] (apply str (rest (str x))))   ; strip "s" of stack name
+      ]
+
+
+  (defmatch nlogo-translate-cmd []
+            ((unlock)   :=> (str 'exec.unlock-cell))
+            ((exit)   :=> (str 'exec.exit))
+            ((get-key)   :=> (str 'exec.get-key))
+            ((move-junction ?junction) :=> (str 'exec.move-to-junction sp (stack-no (? junction))))
+            ( ?_            :=> (ui-out :dbg 'ERROR '(unknown NetLogo cmd)))
+            ))

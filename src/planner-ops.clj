@@ -34,7 +34,7 @@
      :add      ((is c unlocked))
      :del      ((is c locked))
      :txt      (unlocked cell)
-     :cmd      (cell-unlocked - )
+     :cmd      (cell-unlocked -)
      }
 
     :leave-cell
@@ -50,20 +50,20 @@
      :add      ((on prisoner ?p1))
      :del      ((at prisoner c))
      :txt      (leave cell)
-     :cmd      (leave cell - )
+     :cmd      (leave cell -)
      }
 
-    :move   ;; multi move operator
-    { :name move
+    :move                                                   ;; multi move operator
+    {:name     move
      :achieves (on prisoner ?p2)
-     :when ((connects ?p1 ?p2))
-     :post ((on prisoner ?p1))
-     :pre ((on prisoner ?p1)
-            (connects ?p1 ?p2))
-     :del ((on prisoner ?p1))
-     :add ((on prisoner ?p2))
-     :cmd (move-to ?p2 - )
-     :txt ((prisoner moved from ?p1 to ?p2))
+     :when     ((connects ?p1 ?p2))
+     :post     ((on prisoner ?p1))
+     :pre      ((on prisoner ?p1)
+                 (connects ?p1 ?p2))
+     :del      ((on prisoner ?p1))
+     :add      ((on prisoner ?p2))
+     :cmd      (move-to ?p2 -)
+     :txt      ((prisoner moved from ?p1 to ?p2))
      }
 
     :get-key
@@ -79,7 +79,7 @@
      :add      ((has prisoner key))
      :del      ((has ?guard key))
      :txt      (found key at ?p1)
-     :cmd      (key at ?p1 - )
+     :cmd      (key at ?p1 -)
      }
 
     ;;i think this is working because if its false escape
