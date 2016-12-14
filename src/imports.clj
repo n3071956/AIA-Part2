@@ -25,3 +25,6 @@
 ;(load "imports")
 ;(startup 2222)
 ;(map nlogo-send-exec (map nlogo-translate-cmd (get (ops-search world (quote ((escaped prisoner true))) operations-prisoner) :cmds)))
+
+;(time (ops-search world (quote ((escaped prisoner true))) operations-prisoner))
+;(nlogo-send-exec (ops-search world (quote ((escaped prisoner true))) operations-prisoner))

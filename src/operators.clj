@@ -86,7 +86,7 @@
             ((unlock-cell)   :=> (str 'exec.unlock-cell))
             ((exit-prison)   :=> (str 'exec.exit))
             ((get-key)   :=> (str 'exec.get-key))
-            ((move-junction ?junction) :=> (str 'exec.move-to-junction sp (? junction)))
+            ((move-junction ?junction) :=> (str 'exec.move-to-junction sp (str-qt (? junction)) ))
             ((blank) :=> ())
             ;( ?_            :=> (ui-out :dbg 'ERROR '(unknown NetLogo cmd)))
             ))

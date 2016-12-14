@@ -193,15 +193,21 @@
 
 (declare nlogo-translate-cmd)
 
-(defn nlogo-send-exec [cmd-list]
-  ; (ui-out :comm 'NL==> cmd-list)
-  (let [cmd-str (nlogo-translate-cmd cmd-list)]
-    ;(ui-out :comm 'NL==> cmd-list "   \t" cmd-str)
-    ; (ui-out :comm "     " cmd-str)
-    (nlogo-send cmd-str)
-    ))
+;(defn nlogo-send-exec [cmd-list]
+;  ; (ui-out :comm 'NL==> cmd-list)
+;  (let [cmd-str (nlogo-translate-cmd cmd-list)]
+;    ;(ui-out :comm 'NL==> cmd-list "   \t" cmd-str)
+;    ; (ui-out :comm "     " cmd-str)
+;    (nlogo-send cmd-str)
+;    ))
 
 (defn nlogo-test-exec [cmd-list]
   (let [cmd-str (nlogo-translate-cmd cmd-list)]
     (println cmd-str)
     ))
+
+(defn nlogo-send-exec [cmd-list]
+  (map nlogo-send
+       (flatten (map nlogo-translate-cmd (get cmd-list :cmds))))
+  )
+
