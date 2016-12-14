@@ -36,6 +36,12 @@
   add-window
   )
 
+(defn set-atom! [atm x]
+  (swap! atm (fn [_] x)))
+
+
+
+
 ;____ builders ______________________
 
 (def uiwin (atom {}))
@@ -199,10 +205,10 @@
 (declare nlogo-translate-cmd)
 
 (defn nlogo-send-exec [cmd-list]
-  ; (ui-out :comm 'NL==> cmd-list)
+  (ui-out :comm 'NL==> cmd-list)
   (let [cmd-str (nlogo-translate-cmd cmd-list)]
     (ui-out :comm 'NL==> cmd-list "   \t" cmd-str)
-    ; (ui-out :comm "     " cmd-str)
+    (ui-out :comm "     " cmd-str)
     (nlogo-send cmd-str)
     ))
 
