@@ -82,7 +82,7 @@
      :cmd      (key at ?p1 - )
      }
 
-    ;;i think this is working because if its false escape
+
     :exit
     {:name     exit
      :achieves (escaped prisoner true)
