@@ -34,7 +34,7 @@
                        :add ((moving prisoner ?corridor))
                        :del ((on prisoner ?junction))
                        :txt (prisoner moved from ?junction to ?corridor)
-                       :cmd []
+                       :cmd [blank]
                        }
     unlock            {:pre ((at prisoner c)
                               (is c locked)
@@ -70,7 +70,7 @@
                        :add ((escaped prisoner true))
                        :del ((escaped prisoner false))
                        :txt (get ops-searched m8)
-                       :cmd [exit]
+                       :cmd [exit-prison]                   ;changed from exit to exit-prison. scared of conflicts
                        }
     })
 
@@ -83,9 +83,10 @@
 
 
   (defmatch nlogo-translate-cmd []
-            ((unlock)   :=> (str 'exec.unlock-cell))
-            ((exit)   :=> (str 'exec.exit))
+            ((unlock-cell)   :=> (str 'exec.unlock-cell))
+            ((exit-prison)   :=> (str 'exec.exit))
             ((get-key)   :=> (str 'exec.get-key))
-            ((move-junction ?junction) :=> (str 'exec.move-to-junction sp (stack-no (? junction))))
-            ( ?_            :=> (ui-out :dbg 'ERROR '(unknown NetLogo cmd)))
+            ((move-junction ?junction) :=> (str 'exec.move-to-junction sp (str-qt (? junction)) ))
+            ((blank) :=> ())
+            ;( ?_            :=> (ui-out :dbg 'ERROR '(unknown NetLogo cmd)))
             ))
