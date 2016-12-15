@@ -5,11 +5,16 @@
 (load "operators")
 (load "planner(1a)")
 (load "planner-ops")
+(load "planner-ops-warp")
 (load "world")
+(load "world-warp")
 
 (defn startup [port]
   (set-shrdlu-comms port)
   )
+
+(defn ui-out [& r]
+  (apply println r))
 
 ;(load "definitions(1c)")
 

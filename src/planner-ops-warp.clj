@@ -20,7 +20,7 @@
 ;;--hide
 ;;--got-key
 ;;--exit
-(def planner-operations-prisoner
+(def planner-operations-prisoner-warp
 
   '{
     :unlock
@@ -33,68 +33,67 @@
                  )
      :add      ((is c unlocked))
      :del      ((is c locked))
-     :txt      (unlocked cell)
+     :txt      (| unlocked cell)
      :cmd      (cell-unlocked -)
      }
 
     :leave-cell
     {:name     leave-cell
-     :achieves (on prisoner ?p1)
-     :when     ((at prisoner c)
+     :achieves (at prisoner ?p1)
+     :when     ((at prisoner ?p1)
                  (connects c ?p1))
      :post     ((is c unlocked))
-     :pre      ((at prisoner c)
-                 (is c unlocked)
-                 (connects c ?p1)
-                 )
-     :add      ((on prisoner ?p1))
+     :pre      ()
+     :add      ((at prisoner ?p1))
      :del      ((at prisoner c))
-     :txt      (leave cell)
+     :txt      (| leave cell)
      :cmd      (leave cell -)
      }
 
-    ;:move                                                   ;; multi move operator
-    ;{:name     move
+    ;:move-x   ;; a handy multi-move operator
+    ;{ :name move-x
     ; :achieves (on prisoner ?p2)
-    ; :when     ((connects ?p1 ?p2))
-    ; :post     ((on prisoner ?p1))
-    ; :pre      ((on prisoner ?p1)
-    ;             (connects ?p1 ?p2))
-    ; :del      ((on prisoner ?p1))
-    ; :add      ((on prisoner ?p2))
-    ; :cmd      (move-to ?p2 -)
-    ; :txt      ((prisoner moved from ?p1 to ?p2))
+    ; :when ((isa ?x ?_) (at ?x ?sx) (at ?y ?sy) )
+    ; :post ((protected ?sx [on ?x ?y]) (protected ?sy [on ?x ?y])
+    ;         (cleartop ?x) (cleartop ?y) (hand empty) )
+    ; :pre ((on ?x ?ox) )
+    ; :del ((at ?x ?sx)  (on ?x ?ox) (cleartop ?y)
+    ;        (protected ?sx [on ?x ?y]) (protected ?sy [on ?x ?y]) )
+    ; :add ((at ?x ?sy) (on ?x ?y) (cleartop ?ox))
+    ; :cmd ((pick-from ?sx) (drop-at ?sy) )
+    ; :txt ((mv-pick ?x off ?ox at ?sx)
+    ;        (mv-put ?x on ?y at ?sy) )
     ; }
 
-    :move-x                                                 ;; a handy multi-move operator
-    {:name     move-x
-     :achieves (on prisoner ?p2)
-     :when     ((on prisoner ?x)
-                 (connects ?p1 ?p2)
-                 ((:guard (not= (? p1) (? p2))))
+    :move-any
+    {
+     :name     move-any
+     :achieves (at prisoner ?p2)
+     :when     ((at prisoner ?p)
+                 (isa ?p1 loc)
+                 (isa ?p2 loc)
+                 (:guard (not= (? p1) (? p2)))
                  )
-     :post     ((on prisoner ?p1)
-                 )
-     :pre      ((connects ?p1 ?p2))
-     :del      ((on prisoner ?x))
-     :add      ((on prisoner ?p2))
+     :post     ()
+     :pre      ()
+     :del      ((at prisoner ?p))
+     :add      ((at prisoner ?p2))
      :cmd      ()
-     :txt      (| prisoner moved from ?p1 to ?p2)
+     :txt      (| moved from ?p to ?p2)
      }
 
     :get-key
     {:name     get-key
      :achieves (has prisoner key)
-     :when     ((at ?guard ?p1)
-                 (has ?guard key))
-     :post     ((on prisoner ?p1))
-     :pre      ((on prisoner ?p1)
-                 (at ?guard ?p1)
-                 (has ?guard key)
+     :when     ((holds ?guard key)
+                 (positioned ?guard ?p)
+                 (isa ?p loc)
                  )
+     :post     ((at prisoner ?p))
+     :pre      ()
      :add      ((has prisoner key))
-     :del      ((has ?guard key))
-     :txt      (found key at ?p1)
+     :del      ((holds ?guard key))
+     :txt      (| found key at ?p)
      :cmd      (key at ?p1 -)
      }
 
@@ -102,16 +101,14 @@
     :exit
     {:name     exit
      :achieves (escaped prisoner true)
-     :when     ((is ?p1 exit))
-     :post     ((on prisoner ?p1)
-                 (has prisoner key))
-     :pre      ((has prisoner key)
-                 (on prisoner ?p1)
-                 (is ?p1 exit)
-                 (escaped prisoner false))
+     :when     ((is ?p1 exit)
+                 (isa ?p1 loc))
+     :post     ((has prisoner key)
+                 (at prisoner ?p1))
+     :pre      ((escaped prisoner false))
      :add      ((escaped prisoner true))
      :del      ((escaped prisoner false))
-     :txt      (prisoner escaped)
+     :txt      (| prisoner escaped)
      :cmd      (escaped to exit)
      }
     }
