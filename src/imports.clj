@@ -9,6 +9,7 @@
 (load "world")
 (load "worlds")
 (load "world-warp")
+(load "planner_ops_simple")
 
 (defn ui-out [& r]
   (apply println r))
