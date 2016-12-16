@@ -3,10 +3,10 @@
 ;;----------------
 (def world-warp
   '#{
-     (isa j1 loc)
-     (isa j2 loc)
+     (isa j1 location)
+     (isa j2 location)
      (isa c cell)
-     (isa j6 loc)
+     (isa j6 location)
 
      (connects c j6)
 

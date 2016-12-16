@@ -28,9 +28,7 @@
      :achieves (is c unlocked)
      :when     ((is c locked))
      :post     ()
-     :pre      ((at prisoner c)
-                 (is c locked)
-                 )
+     :pre      ((at prisoner c)(is c locked))
      :add      ((is c unlocked))
      :del      ((is c locked))
      :txt      (| unlocked cell)
@@ -39,9 +37,8 @@
 
     :leave-cell
     {:name     leave-cell
-     :achieves (at prisoner ?p1)
-     :when     ((at prisoner ?p1)
-                 (connects c ?p1))
+     :achieves (left prisoner c)
+     :when     ((at prisoner c) (connects c ?p1))
      :post     ((is c unlocked))
      :pre      ()
      :add      ((at prisoner ?p1))
@@ -50,46 +47,24 @@
      :cmd      (leave cell -)
      }
 
-    ;:move-x   ;; a handy multi-move operator
-    ;{ :name move-x
-    ; :achieves (on prisoner ?p2)
-    ; :when ((isa ?x ?_) (at ?x ?sx) (at ?y ?sy) )
-    ; :post ((protected ?sx [on ?x ?y]) (protected ?sy [on ?x ?y])
-    ;         (cleartop ?x) (cleartop ?y) (hand empty) )
-    ; :pre ((on ?x ?ox) )
-    ; :del ((at ?x ?sx)  (on ?x ?ox) (cleartop ?y)
-    ;        (protected ?sx [on ?x ?y]) (protected ?sy [on ?x ?y]) )
-    ; :add ((at ?x ?sy) (on ?x ?y) (cleartop ?ox))
-    ; :cmd ((pick-from ?sx) (drop-at ?sy) )
-    ; :txt ((mv-pick ?x off ?ox at ?sx)
-    ;        (mv-put ?x on ?y at ?sy) )
-    ; }
-
-    :move-any
-    {
-     :name     move-any
+    :move
+    {:name     move
      :achieves (at prisoner ?p2)
-     :when     ((at prisoner ?p)
-                 (isa ?p1 loc)
-                 (isa ?p2 loc)
-                 (:guard (not= (? p1) (? p2)))
-                 )
+     :when     ((at prisoner ?p) (isa ?p1 location) (isa ?p2 location)
+                 (isa ?p location) (:guard (not= (? p1) (? p2))))
      :post     ()
      :pre      ()
      :del      ((at prisoner ?p))
      :add      ((at prisoner ?p2))
      :cmd      ()
-     :txt      (| moved from ?p to ?p2)
+     :txt      (| moved from ?p1 to ?p2)
      }
 
     :get-key
     {:name     get-key
      :achieves (has prisoner key)
-     :when     ((holds ?guard key)
-                 (positioned ?guard ?p)
-                 (isa ?p loc)
-                 )
-     :post     ((at prisoner ?p))
+     :when     ((holds ?guard key) (positioned ?guard ?p) (isa ?p location))
+     :post     ((left prisoner c) (at prisoner ?p))
      :pre      ()
      :add      ((has prisoner key))
      :del      ((holds ?guard key))
@@ -101,10 +76,8 @@
     :exit
     {:name     exit
      :achieves (escaped prisoner true)
-     :when     ((is ?p1 exit)
-                 (isa ?p1 loc))
-     :post     ((has prisoner key)
-                 (at prisoner ?p1))
+     :when     ((is ?p1 exit) (isa ?p1 location))
+     :post     ((has prisoner key) (at prisoner ?p1))
      :pre      ((escaped prisoner false))
      :add      ((escaped prisoner true))
      :del      ((escaped prisoner false))
