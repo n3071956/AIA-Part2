@@ -1,111 +1,47 @@
+;(planner world-simple '(on prisoner H) planner-operations-prisoner-simple)
+
 (def world-simple
   '#{
-     (join A B) (join B A)
-     (join B C) (join C B)
-     (join C E) (join E C)
-     (join E H) (join H E)
-     (join H G) (join G H)
-     (join G F) (join F G)
-     (join F D) (join D F)
-     (join D B) (join B D)
-     (isa A exit)
-     (on agent H)
-
+     (connects A B) (connects B A) (watched A false)
+     (connects B C) (connects C B) (watched B true)
+     (connects C E) (connects E C) (watched C false)
+     (connects E H) (connects H E) (watched D false)
+     (connects H G) (connects G H) (watched E false)
+     (connects G F) (connects F G) (watched F false)
+     (connects F D) (connects D F) (watched G false)
+     (connects D A) (connects A D) (watched H false)
+     (on prisoner A)
      })
 
-;(def state1
-;  '#{(on agent H)
-;     })
-;
-;(def state2
-;  '#{(on agent A)
-;     })
 
-;(planner (concat world-simple state1) '(on agent A) planner-operations-prisoner-simple)
-
-
-;(defn correction [current source desti]
-;    (println "Current : " current " | Source : " source " | Destination : " desti)
-;       (println (first (first (get (ops-search (concat world-simple '#{(on agent source)}) '((on agent current)) legal-next) :cmds)))  )
-;          true
-;            )
-
+(defn in?
+  [collection element]
+  (some #(= element %) collection))
 
 (def previous (atom (java.util.concurrent.LinkedBlockingDeque.)))
 
-(defn correction [current source desti]
-          (println "Current : " current " | Source : " source " | Destination : " desti)
-          (if (nil? (first @previous))
-            (adder source)
-            (if (= 0 (compare (first @previous) desti))
-              false
-              (adder source))))
-
 (defn adder [source]
-      (.push @previous source) true)
+  (.add @previous source) true)
+
+(defn correction [source desti]
+  (println "Checking : " source " to " desti)
+  (if (nil? (in? (into '() @previous) (list desti source)) )
+    (do (.push @previous (list source desti)) true)
+    (do () false)))
 
 (def planner-operations-prisoner-simple
 
   '{
     :move-to-tile
     {:name move-to-tile
-     :achieves (on agent ?desti)
-     :when ((join ?desti ?source) (join ?source ?desti) (on agent ?location) (:guard (correction  (? location) (? source) (? desti))))
-     :post ((on agent ?source))
-     :pre ((on agent ?source))
-     :add ((on agent ?desti))
-     :del ((on agent ?source))
-     :txt (agent moved from ?source to ?desti)
+     :achieves (on prisoner ?desti)
+     :when ((connects ?desti ?source) (connects ?source ?desti) (on prisoner ?location) (watched ?desti false) (:guard (correction  (? source) (? desti))))
+     :post ((on prisoner ?source))
+     :pre ((on prisoner ?source))
+     :add ((on prisoner ?desti))
+     :del ((on prisoner ?source))
+     :txt (prisoner moved from ?source to ?desti)
      :cmds []
      }
-
-    ;:attempted
-    ;{:name attempted
-    ; :achieves (tried ?source)
-    ; :when ((:guard (adder (? ?source))))
-    ; }
     }
   )
-;
-;(def legal-next
-;  '{
-;    path-to-tile  {:pre ((on agent ?source)
-;                          (join ?desti ?source)
-;                          (join ?source ?desti)
-;                              )
-;                       :add ((on agent ?desti))
-;                       :del ((on agent ?source))
-;                       :txt (mapped from ?source to ?desti)
-;                       :cmd [?desti]
-;                       }
-;
-;    }
-;  )
-
-;?target-location) = ?desti
-;
-;
-;:move-to-tile
-;{:name move-to-tile
-; :achieves (on prisoner ?tilea)
-; :when ((connects ?tilea ?tileb) (:not (tried ?tileb ?tilea)))
-; :post ((tried ?tilea ?tileb)(on prisoner ?tileb))
-; ;;Same as ops
-; :pre ((on prisoner ?tileb))
-; :add ((on prisoner ?tilea) )
-; :del ((on prisoner ?tileb) (tried ?tilea ?tileb) )
-; :txt (prisoner moved from ?tileb to ?tilea)
-; :cmd [move-to-tile]
-; }
-
-;:move-to-tile
-;{:name move-to-tile
-; :achieves (on agent ?desti)
-; :when ((join ?desti ?source) (:not (tried ?desti ?source)))
-; :post ((tried ?source ?desti)(on agent ?source))
-; :pre ((on agent ?source))
-; :add ((on agent ?desti))
-; :del ((on agent ?source) (tried ?desti ?source))
-; :txt (agent moved from ?source to ?desti)
-; :cmds []
-; }
