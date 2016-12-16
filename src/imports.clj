@@ -7,14 +7,43 @@
 (load "planner-ops")
 (load "planner-ops-warp")
 (load "world")
+(load "worlds")
 (load "world-warp")
+
+(defn ui-out [& r]
+  (apply println r))
+
 
 (defn startup [port]
   (set-shrdlu-comms port)
   )
 
-(defn ui-out [& r]
-  (apply println r))
+(defn o-search [world]
+  (ops-search world '((escaped prisoner true)) operations-prisoner)
+  )
+
+(defn p-search [world]
+  (planner world '(escaped prisoner true) operations-prisoner)
+  )
+
+(defn timed-o-search [world]
+  (time (o-search world)))
+
+(defn timed-p-search [world]
+  (time (p-search world)))
+
+(defn worldlist []
+  [(set (concat world-9 world-9-var))
+   (set (concat world-9 world-14 world-14-var))
+   (set (concat world-9 world-14 world-19 world-19-var))
+   (set (concat world-9 world-14 world-19 world-22 world-22-var))
+   (set (concat world-9 world-14 world-19 world-22 world-27 world-27-var))
+   (set (concat world-9 world-14 world-19 world-22 world-27 world-29 world-29-var))
+   (set (concat world-9 world-14 world-19 world-22 world-27 world-29 world-34 world-34-var))
+   (set (concat world-9 world-14 world-19 world-22 world-27 world-29 world-34 world-37 world-37-var))
+   (set (concat world-9 world-14 world-19 world-22 world-27 world-29 world-34 world-37 world-40 world-40-var))
+   ]
+  )
 
 ;(load "definitions(1c)")
 
