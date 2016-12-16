@@ -8,6 +8,9 @@
 (load "world")
 (load "worlds")
 
+(defn ui-out [& r]
+  (apply println r))
+
 (defn startup [port]
   (set-shrdlu-comms port)
   )
