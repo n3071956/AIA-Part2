@@ -69,7 +69,7 @@
                               )
                        :add ((escaped prisoner true))
                        :del ((escaped prisoner false))
-                       :txt (get ops-searched m8)
+                       :txt (prisoner escaped)
                        :cmd [exit-prison]                   ;changed from exit to exit-prison. scared of conflicts
                        }
     })

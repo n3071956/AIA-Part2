@@ -1,16 +1,3 @@
-;; TEST CASES
-;;(planner world2 '(escaped prisoner true) planner-operations-prisoner)
-;;(planner world2 '(on prisoner exit) planner-operations-prisoner)
-;;(planner world2 '(on prisoner j5) planner-operations-prisoner)
-;;(planner world2 '(on prisoner c8) planner-operations-prisoner)
-;;(planner world2 '(on prisoner c6) planner-operations-prisoner)
-;;(planner world2 '(on prisoner c7) planner-operations-prisoner)
-
-;;LOOPS!!!!!
-;;(planner world2 '(on prisoner j4) planner-operations-prisoner)
-;;(planner world2 '(on prisoner c5) planner-operations-prisoner)
-
-
 ;;----------------
 ;;Prisoner
 ;;----------------
