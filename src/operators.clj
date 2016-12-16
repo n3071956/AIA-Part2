@@ -36,7 +36,7 @@
                        :txt (prisoner moved from ?junction to ?corridor)
                        :cmd [blank]
                        }
-    unlock            {:pre ((at prisoner c)
+    unlock            {:pre ((on prisoner c)
                               (is c locked)
                               )
                        :add ((is c unlocked))
@@ -44,12 +44,12 @@
                        :txt (unlocked cell)
                        :cmd [unlock-cell]
                        }
-    leave-cell        {:pre ((at prisoner c)
+    leave-cell        {:pre ((on prisoner c)
                               (is c unlocked)
                               (connects c ?junction)
                               )
                        :add ((on prisoner ?junction))
-                       :del ((at prisoner c))
+                       :del ((on prisoner c))
                        :txt (leave cell)
                        :cmd [move-junction ?junction]
                        }
