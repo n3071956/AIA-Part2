@@ -33,3 +33,122 @@
      }
     }
   )
+
+;Comment out to run Tests
+(def planner-operations-prisoner-fakes
+
+  '{
+    :fake1
+    {:name fake1
+     :achieves (some fake tuple)
+     :when ((connects ?desti ?source) (connects ?source ?desti) (on prisoner ?location) (watched ?desti false) (:guard (correction  (? source) (? desti))))
+     :post ((on prisoner ?source))
+     :pre ((on prisoner ?source))
+     :add ((on prisoner ?desti))
+     :del ((on prisoner ?source))
+     :txt (prisoner moved from ?source to ?desti)
+     :cmds []
+     }
+    :fake2
+    {:name fake2
+     :achieves (some fake tuple)
+     :when ((connects ?desti ?source) (connects ?source ?desti) (on prisoner ?location) (watched ?desti false) (:guard (correction  (? source) (? desti))))
+     :post ((on prisoner ?source))
+     :pre ((on prisoner ?source))
+     :add ((on prisoner ?desti))
+     :del ((on prisoner ?source))
+     :txt (prisoner moved from ?source to ?desti)
+     :cmds []
+     }
+    :fake3
+    {:name fake3
+     :achieves (some fake tuple)
+     :when ((connects ?desti ?source) (connects ?source ?desti) (on prisoner ?location) (watched ?desti false) (:guard (correction  (? source) (? desti))))
+     :post ((on prisoner ?source))
+     :pre ((on prisoner ?source))
+     :add ((on prisoner ?desti))
+     :del ((on prisoner ?source))
+     :txt (prisoner moved from ?source to ?desti)
+     :cmds []
+     }
+    :fake4
+    {:name fake4
+     :achieves (some fake tuple)
+     :when ((connects ?desti ?source) (connects ?source ?desti) (on prisoner ?location) (watched ?desti false) (:guard (correction  (? source) (? desti))))
+     :post ((on prisoner ?source))
+     :pre ((on prisoner ?source))
+     :add ((on prisoner ?desti))
+     :del ((on prisoner ?source))
+     :txt (prisoner moved from ?source to ?desti)
+     :cmds []
+     }
+    :fake5
+    {:name fake5
+     :achieves (some fake tuple)
+     :when ((connects ?desti ?source) (connects ?source ?desti) (on prisoner ?location) (watched ?desti false) (:guard (correction  (? source) (? desti))))
+     :post ((on prisoner ?source))
+     :pre ((on prisoner ?source))
+     :add ((on prisoner ?desti))
+     :del ((on prisoner ?source))
+     :txt (prisoner moved from ?source to ?desti)
+     :cmds []
+     }
+    :move-to-tile
+    {:name move-to-tile
+     :achieves (on prisoner ?desti)
+     :when ((connects ?desti ?source) (connects ?source ?desti) (on prisoner ?location) (watched ?desti false) (:guard (correction  (? source) (? desti))))
+     :post ((on prisoner ?source))
+     :pre ((on prisoner ?source))
+     :add ((on prisoner ?desti))
+     :del ((on prisoner ?source))
+     :txt (prisoner moved from ?source to ?desti)
+     :cmds []
+     }
+    }
+  )
+
+(def ops-search-simple-operators-fakes
+  '{
+    fake1 {
+           :pre ((connects ?tilea ?tileb))
+           :add ((some fake tuple))
+           :del ((on prisoner ?tileb))
+           :txt (fake tuple)
+           :cmd []
+           }
+    fake2 {
+           :pre ((connects ?tilea ?tileb))
+           :add ((some fake tuple))
+           :del ((on prisoner ?tileb))
+           :txt (fake tuple)
+           :cmd []
+           }
+    fake3 {
+           :pre ((connects ?tilea ?tileb))
+           :add ((some fake tuple))
+           :del ((on prisoner ?tileb))
+           :txt (fake tuple)
+           :cmd []
+           }
+    fake4 {
+           :pre ((connects ?tilea ?tileb))
+           :add ((some fake tuple))
+           :del ((on prisoner ?tileb))
+           :txt (fake tuple)
+           :cmd []
+           }
+    fake5 {
+           :pre ((connects ?tilea ?tileb))
+           :add ((some fake tuple))
+           :del ((on prisoner ?tileb))
+           :txt (fake tuple)
+           :cmd []
+           }
+    move-to-tile {:pre ((on prisoner ?tileb) (connects ?tilea ?tileb))
+                  :add ((on prisoner ?tilea))
+                  :del ((on prisoner ?tileb))
+                  :txt (prisoner moved from ?tileb to ?tilea)
+                  :cmd []
+                  }
+    }
+  )
