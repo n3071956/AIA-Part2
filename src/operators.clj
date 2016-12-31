@@ -59,7 +59,7 @@
                               )
                        :add ((has prisoner key))
                        :del ((has ?guard key))
-                       :txt (key twoked)
+                       :txt (key found at ?junction)
                        :cmd [get-key]
                        }
     exit              {:pre ((has prisoner key)

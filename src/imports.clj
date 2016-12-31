@@ -7,12 +7,13 @@
 (load "planner-ops")
 (load "planner-ops-warp")
 (load "world")
+(load "planner-world")
 (load "worlds")
 (load "world-warp")
 (load "planner_ops_simple")
 
-(defn ui-out [& r]
-  (apply println r))
+;(defn ui-out [& r]
+;  (apply println r))
 
 
 (defn startup [port]
@@ -45,6 +46,26 @@
    (set (concat world-9 world-14 world-19 world-22 world-27 world-29 world-34 world-37 world-40 world-40-var))
    ]
   )
+
+; Test Commands - Planner
+
+;(planner planner-world '(escaped prisoner true) planner-operations-prisoner)
+;(planner planner-world '(has prisoner key) planner-operations-prisoner)
+
+; Simple World
+
+;(planner world-simple '(on prisoner H) planner-operations-prisoner-simple)
+
+; Test Commands - Ops-Search
+
+;(ops-search world '((escaped prisoner true)) operations-prisoner)
+;(ops-search world '((has prisoner key)) operations-prisoner)
+
+
+
+
+
+
 
 ;(load "definitions(1c)")
 

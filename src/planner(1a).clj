@@ -97,7 +97,44 @@
     :txt   (concat (:txt current) (:txt newp))
     })
 
+(defn print-previous [q]
+  (if (not (empty? q))
+    (do
+      (ui-out :dbg "PREVIOUS:")
+      (doseq [x q]
+        (ui-out :dbg "      " x)
+        )
+      (ui-out :dbg '------)
+      )
+    ))
 
+; Fixes infinite loop
+
+(defn in?
+  [collection element]
+  (some #(= element %) collection))
+
+(def previous (atom (java.util.concurrent.LinkedBlockingDeque.)))
+
+(defn adder [source]
+  (.add @previous source) true)
+
+(defn correction [source desti]
+  (print-previous @previous)
+  (println "Checking : " source " to " desti)
+  (println "Top : " (.peek @previous))
+  (if (nil? (in? (into '() @previous) (list source desti)) )
+    (do (.push @previous (list source desti)) true)
+    (do () false)))
+
+
+(defn correction1 [source desti]
+  (println "============== Checking" (list desti source) "against " (.peek @previous))
+  (if (= (list desti source) (.peek @previous))
+    (do () false)
+    (do (.push @previous (list source desti)) true)
+    )
+  )
 
 
 
