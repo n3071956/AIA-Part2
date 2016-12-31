@@ -134,7 +134,7 @@
      :add      ((is c unlocked))
      :del      ((is c locked))
      :txt      (unlocked cell)
-     :cmd      (cell-unlocked -)
+     :cmd      (unlock-cell)
      }
 
     :leave-cell
@@ -150,7 +150,7 @@
      :add      ((on prisoner ?p1))
      :del      ((on prisoner c))
      :txt      (leave cell)
-     :cmd      (leave cell -)
+     :cmd      (move-junction ?p1)
      }
 
     ;:move                                                   ;; multi move operator
@@ -197,7 +197,7 @@
      :add ((on prisoner ?desti))
      :del ((on prisoner ?source))
      :txt (prisoner moved from ?source to ?desti)
-     :cmds []
+     :cmd (move-junction ?desti)
      }
 
     :get-key
@@ -213,7 +213,7 @@
      :add      ((has prisoner key))
      :del      ((has ?guard key))
      :txt      (found key at ?p1)
-     :cmd      (key at ?p1 -)
+     :cmd      (get-key)
      }
 
     ;;i think this is working because if its false escape
@@ -226,7 +226,7 @@
      :add      ((escaped prisoner true))
      :del      ((escaped prisoner false))
      :txt      (prisoner escaped)
-     :cmd      (escaped to exit)
+     :cmd      (exit-prison)
      }
     }
   )
